@@ -2,7 +2,7 @@ import js from "@eslint/js";
 import globals from "globals";
 import vitest from "eslint-plugin-vitest";
 import reactHooks from "eslint-plugin-react-hooks";
-import reactRefresh, { rules } from "eslint-plugin-react-refresh";
+import reactRefresh from "eslint-plugin-react-refresh";
 
 export default [
   { ignores: ["dist"] },
@@ -45,6 +45,9 @@ export default [
     },
     plugins: {
       vitest,
+    },
+    rules: {
+      ...vitest.configs.recommended.rules,
     },
   },
 ];
