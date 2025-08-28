@@ -3,12 +3,14 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import PropTypes from "prop-types";
 import classes from "./App.module.css";
+import NavBar from "./components/NavBar";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
+    <NavBar />
       <div>
         <div>Test</div>
         <a href="https://vite.dev" target="_blank" rel="noreferrer">
