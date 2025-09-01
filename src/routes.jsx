@@ -1,6 +1,6 @@
 import App from "./App";
 import Shop from "./components/Shop";
-import getStoreApi from "./utils/getStoreApi";
+import getLoaderHelper from "./utils/getLoaderHelper";
 
 const routes = [
   {
@@ -14,8 +14,8 @@ const routes = [
     element: <Shop />,
     //error
     loader: async () => {
-        return {storeData: await getStoreApi()}
-    },//check if storeitems in session storage, if not api fetch also check for cart
+      return { storeData: await getLoaderHelper() };
+    }, //check if storeitems in session storage, if not api fetch also check for cart
     children: [
       { index: true, element: <App /> }, //cartpreview
       { path: "check-out", element: <App /> }, //checkOut
