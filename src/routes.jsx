@@ -1,5 +1,6 @@
 import App from "./App";
 import Shop from "./components/Shop";
+import Store from "./components/Store";
 import getLoaderHelper from "./utils/getLoaderHelper";
 
 const routes = [
@@ -10,15 +11,22 @@ const routes = [
     //loader: check if storeitems in session storage, if not api fetch
   },
   {
-    path: "/shop",
-    element: <Shop />,
+    path: "/store",
+    element: <Store />,
     //error
     loader: async () => {
       return { storeData: await getLoaderHelper() };
     }, //check if storeitems in session storage, if not api fetch also check for cart
     children: [
-      { index: true, element: <App /> }, //cartpreview
-      { path: "check-out", element: <App /> }, //checkOut
+      { index: true, element: <App /> },
+      {
+        path: "shop",
+        element: <Shop />,
+        children: [
+          { index: true, element: <App /> }, //cartpreview
+        ],
+      }, //checkOut
+      { path: "check-out", element: <App /> },
     ],
   },
 ];

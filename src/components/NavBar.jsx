@@ -4,10 +4,10 @@ function NavBar() {
   return (
     <>
       <Link to={"/"}>Home</Link>
-      <Link to={"/shop"}>Shop</Link>
-      <Link to={"/check-out"}>Checkout</Link>
+      <Link to={"/store/shop"}>Shop</Link>
+      <Link to={"/store/check-out"}>Checkout</Link>
     </>
   );
 }
 
-export default NavBar
+export default NavBar;
