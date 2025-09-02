@@ -16,7 +16,7 @@ const routes = [
     //error
     loader: async () => {
       return { storeData: await getLoaderHelper() };
-    }, //check if storeitems in session storage, if not api fetch also check for cart
+    }, 
     children: [
       { index: true, element: <App /> },
       {

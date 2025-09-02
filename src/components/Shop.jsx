@@ -1,7 +1,7 @@
 import { useOutletContext } from "react-router-dom";
 
 function Shop() {
-    const storeData = useOutletContext()
+    const [storeData]= useOutletContext()
   return (
     <>
       <div>This is the Shop</div>
