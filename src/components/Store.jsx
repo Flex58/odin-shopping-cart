@@ -1,7 +1,6 @@
-import { Outlet, useLoaderData } from "react-router-dom";
+import { data, Outlet, useLoaderData } from "react-router-dom";
 import NavBar from "./NavBar";
 import useCart from "../hooks/useCart";
-import { useState } from "react";
 
 function Store() {
   const { storeData } = useLoaderData();
