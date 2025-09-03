@@ -1,4 +1,4 @@
-import { data, Outlet, useLoaderData } from "react-router-dom";
+import { Outlet, useLoaderData } from "react-router-dom";
 import NavBar from "./NavBar";
 import useCart from "../hooks/useCart";
 

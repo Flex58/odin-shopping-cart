@@ -3,7 +3,6 @@ import ErrorPage from "./components/ErrorPage";
 import Shop from "./components/Shop";
 import Store from "./components/Store";
 import getLoaderHelper from "./utils/getLoaderHelper";
-import { data } from "react-router-dom";
 
 const routes = [
   {
@@ -18,7 +17,7 @@ const routes = [
     element: <Store />,
     errorElement: <ErrorPage />,
     loader: async () => {
-      throw data("record not found", { status: 404 });
+      return { storeData: await getLoaderHelper() };
     },
     children: [
       { index: true, element: <App /> },
