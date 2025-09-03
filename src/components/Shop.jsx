@@ -1,15 +1,16 @@
-import { useOutletContext } from "react-router-dom";
+import { Outlet, useOutletContext } from "react-router-dom";
 import Cards from "./Cards";
 
 function Shop() {
-    const [storeData]= useOutletContext()
+  const [storeData, cart] = useOutletContext();
   return (
     <>
       <div>This is the Shop</div>
-      <div> 
-        {storeData.map((item) => (
-          <Cards key={item.id} props={item}/>
-        ))}
+     <Outlet context={cart}/>
+      <div>
+        {storeData.map((item) => {
+          return <Cards key={item.id} props={item} cart={cart} />;
+        })}
       </div>
     </>
   );
