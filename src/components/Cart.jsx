@@ -6,7 +6,7 @@ function Cart() {
     if (e.target.value <= 0 || undefined) {
       return;
     } else {
-      cart.addToCart(item, e.target.value);
+      cart.addToCart(item, parseInt(e.target.value, 10));
     }
   }
   return (
@@ -15,7 +15,11 @@ function Cart() {
         <div key={item.id}>
           <div>{item.title}</div>
           <div>{item.totalPrice}€</div>
-          <button type="button" onClick={() => cart.decrement(item.id)} disabled={item.amount <= 1 ? true : false}>
+          <button
+            type="button"
+            onClick={() => cart.decrement(item.id)}
+            disabled={item.amount <= 1 ? true : false}
+          >
             -
           </button>
           <input

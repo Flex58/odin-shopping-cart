@@ -66,9 +66,21 @@ function useCart() {
     addToCart(item, item.amount - 1);
   }
 
+  function clearCart() {
+    setCart([]);
+  }
+
   useEffect(() => {
     sessionStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
-  return { checkCart, addToCart, removeFromCart, increment, decrement, cart };
+  return {
+    checkCart,
+    addToCart,
+    removeFromCart,
+    increment,
+    decrement,
+    clearCart,
+    cart,
+  };
 }
 export default useCart;

@@ -1,5 +1,6 @@
 import App from "./App";
 import Cart from "./components/Cart";
+import CheckOut from "./components/CheckOut";
 import ErrorPage from "./components/ErrorPage";
 import Shop from "./components/Shop";
 import Store from "./components/Store";
@@ -28,7 +29,7 @@ const routes = [
           { index: true, element: <Cart /> }, //cartpreview
         ],
       }, //checkOut
-      { path: "check-out", element: <App /> },
+      { path: "check-out", element: <CheckOut /> },
     ],
   },
 ];
