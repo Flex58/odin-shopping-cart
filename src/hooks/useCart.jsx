@@ -53,9 +53,22 @@ function useCart() {
     );
   }
 
+  function increment(id) {
+    const item = cart.find((item) => item.id === id);
+    addToCart(item, item.amount + 1);
+  }
+
+  function decrement(id) {
+    const item = cart.find((item) => item.id === id);
+    if (item.amount - 1 <= 0) {
+      return;
+    }
+    addToCart(item, item.amount - 1);
+  }
+
   useEffect(() => {
     sessionStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
-  return { checkCart, addToCart, removeFromCart, cart };
+  return { checkCart, addToCart, removeFromCart, increment, decrement, cart };
 }
 export default useCart;
