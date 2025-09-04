@@ -21,6 +21,15 @@ function CheckOut() {
       {cart.cart.map((item) => {
         return (
           <div key={item.id}>
+            <button
+              type="button"
+              onClick={() => {
+                cart.removeFromCart(item.id);
+                setTotalPrice((c) => c - item.totalPrice);
+              }}
+            >
+              x
+            </button>
             <img src={item.image} alt={"image of " + item.title} />
             <div>{item.title}</div>
             <div>{item.desc}</div>
@@ -60,7 +69,9 @@ function CheckOut() {
       ) : (
         <>
           <div>Total Price: {totalPrice}€</div>
-          <button type="button" onClick={() => cart.clearCart()}>Pay Now!</button>
+          <button type="button" onClick={() => cart.clearCart()}>
+            Pay Now!
+          </button>
         </>
       )}
     </div>
