@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function useCart() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {
+    const stored = sessionStorage.getItem("cart");
+    return stored ? JSON.parse(stored) : [];
+  });
 
   function checkCart(id) {
     return cart.some((item) => item.id === id);
@@ -39,6 +42,20 @@ function useCart() {
       ]);
     }
   }
-  return { checkCart, addToCart, cart };
+
+  function removeFromCart(id) {
+    setCart(
+      cart.filter((item) => {
+        if (item.id !== id) {
+          return item;
+        }
+      })
+    );
+  }
+
+  useEffect(() => {
+    sessionStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+  return { checkCart, addToCart, removeFromCart, cart };
 }
 export default useCart;

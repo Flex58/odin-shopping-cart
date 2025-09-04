@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-    <NavBar />
+      <NavBar />
       <div>
         <div>Test</div>
         <a href="https://vite.dev" target="_blank" rel="noreferrer">

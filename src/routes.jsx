@@ -10,7 +10,6 @@ const routes = [
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
-    //errorElement: <ErrorPage />
     //loader: check if storeitems in session storage, if not api fetch
   },
   {

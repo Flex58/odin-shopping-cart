@@ -4,7 +4,7 @@ import useCart from "../hooks/useCart";
 
 function Store() {
   const { storeData } = useLoaderData();
-  const cart = useCart(); //save cart to session storage TODO
+  const cart = useCart(); 
   return (
     <>
       <NavBar />
