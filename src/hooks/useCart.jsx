@@ -19,7 +19,7 @@ function useCart() {
             return {
               ...item,
               amount: amount,
-              totalPrice: amount * product.price,
+              totalPrice: Math.round((amount * product.price + Number.EPSILON) * 100) / 100,
             };
           } else {
             return item;
@@ -37,7 +37,7 @@ function useCart() {
           desc: product.description,
           image: product.image,
           amount: amount,
-          totalPrice: amount * product.price,
+          totalPrice: Math.round((amount * product.price + Number.EPSILON) * 100) / 100,
         },
       ]);
     }

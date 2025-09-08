@@ -14,7 +14,7 @@ function Cards({ props, cart }) {
   return (
     <div>
       <div>{props.title}</div>
-      <div>{props.price}</div>
+      <div>{props.price}€</div>
       <button type="button" onClick={handleChange}>
         {isAdded ? "Remove" : "Add"}
       </button>
