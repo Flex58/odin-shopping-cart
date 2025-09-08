@@ -1,12 +1,21 @@
+import classes from "../css/NavBar.module.css";
 import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
-    <>
-      <Link to={"/"}>Home</Link>
-      <Link to={"/store/shop"}>Shop</Link>
-      <Link to={"/store/check-out"}>Checkout</Link>
-    </>
+    <div className={classes.wrapper}>
+      <div className={classes.left}>
+        <Link to={"/"} className={classes.link}>
+          Home
+        </Link>
+        <Link to={"/store/shop"} className={classes.link}>
+          Shop
+        </Link>
+      </div>
+      <Link to={"/store/check-out"} className={classes.link}>
+        Checkout
+      </Link>
+    </div>
   );
 }
 

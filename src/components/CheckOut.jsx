@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
+import main from '../css/LayoutMain.module.css'
 
 function CheckOut() {
   const [, cart] = useOutletContext();
@@ -17,7 +18,7 @@ function CheckOut() {
     }
   }
   return (
-    <div>
+    <div className={main.main}>
       {cart.cart.map((item) => {
         return (
           <div key={item.id}>

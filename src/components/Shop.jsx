@@ -1,10 +1,11 @@
 import { Outlet, useOutletContext } from "react-router-dom";
 import Cards from "./Cards";
+import main from "../css/LayoutMain.module.css"
 
 function Shop() {
   const [storeData, cart] = useOutletContext();
   return (
-    <>
+    <div className={main.main}>
       <div>This is the Shop</div>
      <Outlet context={cart}/>
       <div>
@@ -12,7 +13,7 @@ function Shop() {
           return <Cards key={item.id} props={item} cart={cart} />;
         })}
       </div>
-    </>
+    </div>
   );
 }
 

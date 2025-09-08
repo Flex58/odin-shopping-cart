@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  background-color: #001f3f;
+  justify-content: space-between;
+  padding: 1em 1.5em;
+}
+
+.left {
+  display: flex;
+  gap: 1em;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+}
