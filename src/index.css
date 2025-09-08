@@ -1,15 +1,27 @@
+@font-face {
+  font-family: "Inter";
+  src: local("Inter"),
+    url("./assets/Inter/Inter-VariableFont.ttf")
+      format("opentype");
+  font-weight: 125 950;
+  font-stretch: 75% 125%;
+
+  font-style: normal;
+}
+
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
 body {
-    background-color: #3A6D8C;
-    min-height: 100vh;
+  background-color: #3a6d8c;
+  min-height: 100vh;
 }
 
 #root {
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
