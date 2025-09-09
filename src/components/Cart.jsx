@@ -1,4 +1,5 @@
 import { useOutletContext } from "react-router-dom";
+import classes from "../css/Cart.module.css";
 
 function Cart() {
   const cart = useOutletContext();
@@ -10,28 +11,31 @@ function Cart() {
     }
   }
   return (
-    <div>
+    <div className={classes.cart}>
       {cart.cart.map((item) => (
-        <div key={item.id}>
+        <div key={item.id} className={classes.item}>
           <div>{item.title}</div>
           <div>{item.totalPrice}€</div>
-          <button
-            type="button"
-            onClick={() => cart.decrement(item.id)}
-            disabled={item.amount <= 1 ? true : false}
-          >
-            -
-          </button>
-          <input
-            type="number"
-            name="amount"
-            id={"amount" + item.id}
-            value={item.amount}
-            onChange={(e) => handleChange(e, item)}
-          />
-          <button type="button" onClick={() => cart.increment(item.id)}>
-            +
-          </button>
+          <div className={classes.input}>
+            <button
+              type="button"
+              onClick={() => cart.decrement(item.id)}
+              disabled={item.amount <= 1 ? true : false}
+            >
+              -
+            </button>
+            <input
+              type="number"
+              name="amount"
+              id={"amount" + item.id}
+              value={item.amount}
+              onChange={(e) => handleChange(e, item)}
+            />
+            <button type="button" onClick={() => cart.increment(item.id)}>
+              +
+            </button>
+          </div>
+          <hr />
         </div>
       ))}
     </div>

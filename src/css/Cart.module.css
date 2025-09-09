@@ -1,0 +1,31 @@
+.cart {
+  border: 1px solid #3a6d8c;
+  padding: 1em;
+  max-height: 75vh;
+  max-width: 65ch;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.input {
+  display: grid;
+  grid-template-columns: 2fr 0.5fr 2fr;
+  gap: 2px;
+}
+
+.input input {
+  max-width: 15ch;
+  text-align: center;
+}
+
+.input button {
+  width: auto;
+}
