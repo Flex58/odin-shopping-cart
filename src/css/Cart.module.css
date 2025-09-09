@@ -1,5 +1,5 @@
 .cart {
-  border: 1px solid #3a6d8c;
+  border: 2px solid #3a6d8c;
   padding: 1em;
   max-height: 75vh;
   max-width: 65ch;
@@ -28,4 +28,8 @@
 
 .input button {
   width: auto;
+}
+
+.cart hr {
+  color: #3a6d8c;
 }

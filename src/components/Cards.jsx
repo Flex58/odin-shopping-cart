@@ -14,10 +14,10 @@ function Cards({ props, cart }) {
   }
   return (
     <div className={classes.card}>
-      <div>{props.title}</div>
-      <div>{props.price}€</div>
+      <p>{props.title}</p>
+      <p>Price: {props.price}€</p>
       <button type="button" onClick={handleChange}>
-        {isAdded ? "Remove" : "Add"}
+        {isAdded ? "Remove from Cart" : "Add to Cart"}
       </button>
 
     </div>
