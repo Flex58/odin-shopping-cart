@@ -3,7 +3,7 @@
   padding: 1em;
   max-height: 75vh;
   max-width: 65ch;
-  overflow: scroll;
+  overflow: auto;
   display: flex;
   flex-direction: column;
   gap: 0.5em;

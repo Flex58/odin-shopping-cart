@@ -10,3 +10,7 @@
     width: 30ch;
     text-align: center;
 }
+
+.card button {
+  min-width: 118.3px;
+}
