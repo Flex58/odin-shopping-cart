@@ -1,7 +1,7 @@
 import classes from "../css/NavBar.module.css";
 import { Link } from "react-router-dom";
 
-function NavBar() {
+function NavBar({cart}) {
   return (
     <div className={classes.wrapper}>
       <div className={classes.left}>
@@ -13,7 +13,7 @@ function NavBar() {
         </Link>
       </div>
       <Link to={"/store/check-out"} className={classes.link}>
-        Checkout
+        {cart?.cart ? "Checkout(" + cart.cart.length + ")" : "Checkout"}
       </Link>
     </div>
   );

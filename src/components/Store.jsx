@@ -8,7 +8,7 @@ function Store() {
   const cart = useCart();
   return (
     <>
-      <NavBar />
+      <NavBar cart={cart}/>
       <Outlet context={[storeData, cart]} />
       <Footer />
     </>
