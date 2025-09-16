@@ -1,7 +1,8 @@
 .cart {
   border: 2px solid #3a6d8c;
+  border-radius: 10px;
   padding: 1em;
-  max-height: 75vh;
+  height: 69vh;
   max-width: 65ch;
   overflow: auto;
   display: flex;
@@ -27,9 +28,42 @@
 }
 
 .input button {
+  background-color: #3a6d8c;
+  border: none;
+  border-radius: 3px;
+  color: #f2f2f2;
   width: auto;
+}
+
+button:disabled {
+  background-color: #6a9ab0;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #001f3f;
+}
+
+button:disabled:hover {
+  background-color: #6a9ab0;
+  cursor: auto;
+}
+
+input {
+  border: 1px solid #3a6d8c;
+  border-radius: 3px;
+  background-color: #f2f2f2;
+}
+
+input:focus {
+  border: 1px solid #001F3F;
+  outline: none;
 }
 
 .cart hr {
   color: #3a6d8c;
+}
+
+h2 {
+  font-size: 1.25rem;
 }

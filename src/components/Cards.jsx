@@ -1,5 +1,5 @@
 import { useState } from "react";
-import classes from '../css/Card.module.css'
+import classes from "../css/Card.module.css";
 
 function Cards({ props, cart }) {
   const [isAdded, setIsAdded] = useState(cart.checkCart(props.id));
@@ -14,12 +14,17 @@ function Cards({ props, cart }) {
   }
   return (
     <div className={classes.card}>
-      <p>{props.title}</p>
-      <p>Price: {props.price}€</p>
-      <button type="button" onClick={handleChange}>
-        {isAdded ? "Remove from Cart" : "Add to Cart"}
-      </button>
-
+      <div>
+        <h2>{props.title}</h2>
+        <hr />
+      </div>
+      <img src={props.image} alt={"Image of " + props.title} />
+      <div className={classes.prizeDiv}>
+        <p>Price: {props.price}€</p>
+        <button type="button" onClick={handleChange}>
+          {isAdded ? "Remove from Cart" : "Add to Cart"}
+        </button>
+      </div>
     </div>
   );
 }

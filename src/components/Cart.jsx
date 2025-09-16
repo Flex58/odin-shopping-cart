@@ -10,17 +10,17 @@ function Cart() {
       cart.addToCart(item, parseInt(e.target.value, 10));
     }
   }
-  return (
+  return cart.cart.length !== 0 ? (
     <div className={classes.cart}>
       {cart.cart.map((item) => (
         <div key={item.id} className={classes.item}>
-          <div>{item.title}</div>
-          <div>{item.totalPrice}€</div>
+          <h2>{item.title}</h2>
+          <p>{"Price: " + item.totalPrice}€</p>
           <div className={classes.input}>
             <button
               type="button"
               onClick={() => cart.decrement(item.id)}
-              disabled={item.amount <= 1 ? true : false}
+              disabled={item.amount <= 1}
             >
               -
             </button>
@@ -39,6 +39,8 @@ function Cart() {
         </div>
       ))}
     </div>
+  ) : (
+    <p className={classes.cart}>Your Cart is empty</p>
   );
 }
 

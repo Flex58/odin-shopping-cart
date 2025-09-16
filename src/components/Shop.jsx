@@ -8,14 +8,17 @@ function Shop() {
   return (
     <div className={classes.main + " " + main.main}>
       <div>
-        <div>This is the Shop</div>
+        <h1>This is the Shop</h1>
         <div className={classes.cardGroup}>
           {storeData.map((item) => {
-            return <Cards key={item.id} props={item} cart={cart} className={classes.tempCard} />;
+            return <Cards key={item.id} props={item} cart={cart} />;
           })}
         </div>
       </div>
-      <Outlet context={cart} />
+      <div>
+        <h1>Cart</h1>
+        <Outlet context={cart} />
+      </div>
     </div>
   );
 }
