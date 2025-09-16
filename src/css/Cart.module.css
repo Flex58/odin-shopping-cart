@@ -35,27 +35,27 @@
   width: auto;
 }
 
-button:disabled {
+.input button:disabled {
   background-color: #6a9ab0;
 }
 
-button:hover {
+.input button:hover {
   cursor: pointer;
   background-color: #001f3f;
 }
 
-button:disabled:hover {
+.input button:disabled:hover {
   background-color: #6a9ab0;
   cursor: auto;
 }
 
-input {
+.input input {
   border: 1px solid #3a6d8c;
   border-radius: 3px;
   background-color: #f2f2f2;
 }
 
-input:focus {
+.input input:focus {
   border: 1px solid #001F3F;
   outline: none;
 }
