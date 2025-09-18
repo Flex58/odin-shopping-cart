@@ -1,0 +1,53 @@
+.layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
+.wrapper {
+  border: 2px solid #3a6d8c;
+  border-radius: 10px;
+  padding: 1em;
+  margin: 1em auto;
+  height: 75vh;
+  overflow: auto;
+}
+
+.item {
+  aspect-ratio: 16 / 9;
+  width: 40ch;
+  text-align: center;
+}
+
+.item img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.removeBtnDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.removeBtnDiv p {
+  margin: auto;
+}
+
+input.inputOW {
+    max-width: none;
+}
+
+.btnOW{
+    width: fit-content;
+    padding: 0 3em;
+}
+
+.btnL {
+    justify-self: self-end;
+}
+
+.btnR {
+    justify-self: self-start;
+}

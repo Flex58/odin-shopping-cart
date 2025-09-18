@@ -18,8 +18,10 @@ function useCart() {
           if (item.id === product.id) {
             return {
               ...item,
+              price: parseFloat(product.price),
               amount: amount,
-              totalPrice: Math.round((amount * product.price + Number.EPSILON) * 100) / 100,
+              totalPrice:
+                Number((amount * product.price).toFixed(2)) ,
             };
           } else {
             return item;
@@ -33,11 +35,12 @@ function useCart() {
         {
           id: product.id,
           title: product.title,
-          price: product.price,
+          price: parseFloat(product.price),
           desc: product.description,
           image: product.image,
           amount: amount,
-          totalPrice: Math.round((amount * product.price + Number.EPSILON) * 100) / 100,
+          totalPrice:
+            Number((amount * product.price ).toFixed(2)),
         },
       ]);
     }
