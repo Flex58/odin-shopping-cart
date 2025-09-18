@@ -55,9 +55,7 @@ input.inputOW {
 .description {
     border: none;
     background-color: #f2f2f2;
-    overflow: hidden;
-    display: grid;
-    grid-template-rows: 0fr;
+    width: 100%;
 }
 
 .description h3 {

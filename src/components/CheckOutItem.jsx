@@ -1,16 +1,17 @@
-import classes from '../css/CheckOut.module.css'
-import input from '../css/Cart.module.css'
+import classes from "../css/CheckOut.module.css";
+import input from "../css/Cart.module.css";
 
 function CheckOutItem({ item, cart, handleChange, tPInc, tPDec, tPRemove }) {
   return (
     <div key={item.id} className={classes.item}>
       <img src={item.image} alt={"image of " + item.title} />
       <h2>{item.title}</h2>
+
       <button className={classes.description}>
         <h3>Description</h3>
         <hr />
-        <p>{item.desc}</p>
       </button>
+      <p className={classes.collapse}>{item.desc}</p>
 
       <div className={input.input}>
         <button

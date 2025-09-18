@@ -40,29 +40,31 @@ function CheckOut() {
 
   return (
     <div className={main.main + " " + classes.layout}>
-      <div className={classes.wrapper}>
-        {cart.cart.map((item) => {
-          return (
-            <CheckOutItem
-              item={item}
-              cart={cart}
-              handleChange={handleChange}
-              tPInc={tPInc}
-              tPDec={tPDec}
-              tPRemove={tPRemove}
-            />
-          );
-        })}
-      </div>
       {cart.cart.length === 0 ? (
         <p>Cart is Empty</p>
       ) : (
-        <div>
-          <p>Total Price: {totalPrice}€</p>
-          <button type="button" onClick={() => cart.clearCart()}>
-            Pay Now!
-          </button>
-        </div>
+        <>
+          <div className={classes.wrapper}>
+            {cart.cart.map((item) => {
+              return (
+                <CheckOutItem
+                  item={item}
+                  cart={cart}
+                  handleChange={handleChange}
+                  tPInc={tPInc}
+                  tPDec={tPDec}
+                  tPRemove={tPRemove}
+                />
+              );
+            })}
+          </div>
+          <div>
+            <p>Total Price: {totalPrice}€</p>
+            <button type="button" onClick={() => cart.clearCart()}>
+              Pay Now!
+            </button>
+          </div>
+        </>
       )}
     </div>
   );
