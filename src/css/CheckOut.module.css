@@ -28,11 +28,23 @@
 
 .removeBtnDiv {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 2.5em;
+  padding-top: .5em;
+  padding-bottom: 2em;
 }
 
-.removeBtnDiv p {
-  margin: auto;
+.removeBtnDiv button {
+    background-color: rgb(205, 54, 54);
+    color: #f2f2f2;
+    padding: .25em .5em;
+    border: none;
+    border-radius: 3px;
+}
+
+.removeBtnDiv button:hover {
+    cursor: pointer;
+    background-color: rgb(125, 34, 34);
 }
 
 input.inputOW {
@@ -58,10 +70,42 @@ input.inputOW {
     width: 100%;
 }
 
+.description:hover {
+    cursor: pointer;
+}
+
 .description h3 {
     font-size: 1.15rem;
 }
 
 .description hr {
     color: #3a6d8c;
+}
+
+.collapse {
+    max-height: 0;
+    transition: max-height 0.25s ease-out;
+    overflow: hidden;
+}
+
+.payDiv {
+    display: flex;
+    min-width: 200px;
+    flex-direction: column;
+    align-items: center;
+    gap: .5em;
+}
+
+.payDiv button {
+    width: fit-content;
+    padding: .5em;
+    background-color: #3a6d8c;
+    color: #f2f2f2;
+    border: none;
+    border-radius: 3px;
+}
+
+.payDiv button:hover {
+    cursor: pointer;
+    background-color: #001f3f;
 }

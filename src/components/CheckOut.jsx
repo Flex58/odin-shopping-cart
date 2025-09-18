@@ -48,6 +48,7 @@ function CheckOut() {
             {cart.cart.map((item) => {
               return (
                 <CheckOutItem
+                  key={item.id}
                   item={item}
                   cart={cart}
                   handleChange={handleChange}
@@ -58,7 +59,7 @@ function CheckOut() {
               );
             })}
           </div>
-          <div>
+          <div className={classes.payDiv}>
             <p>Total Price: {totalPrice}€</p>
             <button type="button" onClick={() => cart.clearCart()}>
               Pay Now!

@@ -1,17 +1,36 @@
 import classes from "../css/CheckOut.module.css";
 import input from "../css/Cart.module.css";
+import { useEffect, useRef, useState } from "react";
 
 function CheckOutItem({ item, cart, handleChange, tPInc, tPDec, tPRemove }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const ref = useRef(0);
+
+  useEffect(() => {
+    if (isExpanded) {
+      const sHeight = ref.current.scrollHeight;
+      ref.current.style.maxHeight = sHeight + "px";
+    } else {
+      ref.current.style.maxHeight = "0px";
+    }
+  }, [isExpanded]);
+
   return (
     <div key={item.id} className={classes.item}>
       <img src={item.image} alt={"image of " + item.title} />
       <h2>{item.title}</h2>
 
-      <button className={classes.description}>
+      <button
+        className={classes.description}
+        onClick={() => setIsExpanded(!isExpanded)}
+      >
         <h3>Description</h3>
         <hr />
       </button>
-      <p className={classes.collapse}>{item.desc}</p>
+      <p className={classes.collapse} ref={ref}>
+        {item.desc}
+      </p>
 
       <div className={input.input}>
         <button
@@ -53,7 +72,7 @@ function CheckOutItem({ item, cart, handleChange, tPInc, tPDec, tPRemove }) {
             tPRemove(item);
           }}
         >
-          x
+          Remove from Cart
         </button>
       </div>
     </div>
