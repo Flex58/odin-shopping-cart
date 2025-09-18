@@ -51,3 +51,19 @@ input.inputOW {
 .btnR {
     justify-self: self-start;
 }
+
+.description {
+    border: none;
+    background-color: #f2f2f2;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 0fr;
+}
+
+.description h3 {
+    font-size: 1.15rem;
+}
+
+.description hr {
+    color: #3a6d8c;
+}
