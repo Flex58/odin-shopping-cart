@@ -7,7 +7,7 @@ import CheckOutItem from "./CheckOutItem";
 function CheckOut() {
   const [, cart] = useOutletContext();
   const [totalPrice, setTotalPrice] = useState(
-    cart.cart.reduce((x, item) => x + item.totalPrice, 0)
+    Number((cart.cart.reduce((x, item) => x + item.totalPrice, 0)).toFixed(2))
   );
   function handleChange(e, item) {
     if (e.target.value <= 0 || undefined) {
